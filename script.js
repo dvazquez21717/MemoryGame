@@ -30,15 +30,17 @@ function resetBoard(){
 function createBoard(){
     board.innerHTML = ''
     for(let i = 0; i < cardsArray.length; i++ ){
+        var parent = document.createElement('div')
         var card = document.createElement('img')
+        parent.classList.add('parent')
         card.classList.add('card')
         card.setAttribute('id', i)
         card.setAttribute('src', 'images/questionmark.png')
         card.addEventListener("click", flip);
-        // card.onclick() = function(){flip()}
         card.innerHTML = cardsArray[i];
-        // card.style.width = '100px';
-        board.appendChild(card)
+        parent.appendChild(card)
+        board.appendChild(parent)
+
         
     }
 

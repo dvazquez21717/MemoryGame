@@ -20,11 +20,9 @@ var selected = []
 
 cardsArray.sort(() => 0.5 - Math.random())
 
-
+// from stackoverflow
 function resetBoard(){
-    board.innerHTML = ''
-    cardsArray.sort(() => 0.5 - Math.random())
-    createBoard()
+   window.location.reload();
 }
 
 function createBoard(){
@@ -43,16 +41,19 @@ function createBoard(){
 
         
     }
+    var btn = document.getElementsByClassName('reset')[0];
+    btn.style.display = 'flex';
 
 }
 
 function flip(){
-    var card_id = this.getAttribute('id')
-    selected.push(card_id)
+    var card_array_id = this.getAttribute('id')
+    selected.push(card_array_id)
+    this.setAttribute('src', cardsArray[card_array_id].img)
     // selected.push(position)
     if(selected.length === 2){
         console.log('test');
-        setTimeout(matched, 600)
+        setTimeout(matched, 500)
     }
 
 }
@@ -62,14 +63,15 @@ function matched(){
     var cards = document.getElementsByClassName('card')
     var first_id = selected[0]
     var second_id = selected[1]
-    var first_card = cardsArray[first_id]
-    var second_card = cardsArray[second_id]
+    var first_card = cardsArray[first_id].name
+    var second_card = cardsArray[second_id].name
     if(first_card === second_card && first_id != second_id){
         alert('Match found!')
-        cards[first_id].innerHTML = 'matched'
-        cards[second_id].innerHTML = 'matched'
+        
     }else{
         alert('No match')
+        cards[first_id].setAttribute('src', 'images/questionmark.png')
+        cards[second_id].setAttribute('src', 'images/questionmark.png')
     }
     selected = []
 }

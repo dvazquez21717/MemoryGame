@@ -1,5 +1,18 @@
 
-const cardsArray = [1,1,2,2,3,3,4,4,5,5,6,6]
+const cardsArray = [
+    {name: "Aries", img:"images/aries.png"},
+    {name: "Aries", img:"images/aries.png"},
+    {name: "Cancer", img:"images/cancer.png"},
+    {name: "Cancer", img:"images/cancer.png"},
+    {name: "Libra", img:"images/libra.png"},
+    {name: "Libra", img:"images/libra.png"},
+    {name: "Pisces", img:"images/pisces.png"},
+    {name: "Pisces", img:"images/pisces.png"},
+    {name: "Scorpio", img:"images/scorpio.png"},
+    {name: "Scorpio", img:"images/scorpio.png"},
+    {name: "Virgo", img: "images/virgo.png"},
+    {name: "Virgo", img: "images/virgo.png"}
+]
 
 const board = document.querySelector('.flex-container')
 
@@ -17,13 +30,14 @@ function resetBoard(){
 function createBoard(){
     board.innerHTML = ''
     for(let i = 0; i < cardsArray.length; i++ ){
-        var card = document.createElement('div')
+        var card = document.createElement('img')
         card.classList.add('card')
         card.setAttribute('id', i)
+        card.setAttribute('src', 'images/questionmark.png')
         card.addEventListener("click", flip);
         // card.onclick() = function(){flip()}
         card.innerHTML = cardsArray[i];
-        card.style.width = '400px';
+        // card.style.width = '100px';
         board.appendChild(card)
         
     }

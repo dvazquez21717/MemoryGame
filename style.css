@@ -1,10 +1,30 @@
 .flex-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    /* height: 400px; */
+    justify-content: flex-end;
+    
+}
+.parent{
+    flex: 0 0 26%;
+    
+}
+
+.card{
+    height: 150px;
+    width: 150px;
+}
+
+.start{
+    height: 50%;
+    width: 55.5%;
 }
 
 .reset{
-    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resetBtn{
+    margin: auto;
 }

@@ -20,11 +20,13 @@
 }
 
 .reset{
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 .resetBtn{
     margin: auto;
+    
 }

@@ -1,3 +1,4 @@
+
 body{
     font-family: 'Futura', sans-serif;
     background-color: #1d2923;
@@ -36,13 +37,13 @@ body{
     cursor: pointer;
 }
 
+
 .reset{
     /* display: flex; */
     align-items: center;
     justify-content: center;
     display: none;
     margin: 26px;
-
 }
 
 .resetBtn{
@@ -55,7 +56,5 @@ body{
     border-radius: 10px;
     padding: 10px 20px 10px;
     cursor: pointer;
-
-
 }
 

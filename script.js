@@ -1,3 +1,4 @@
+
 const cardsArray = [
     {name: "Aries", img:"images/aries.png"},
     {name: "Aries", img:"images/aries.png"},
@@ -19,7 +20,8 @@ var selected = []
 
 cardsArray.sort(() => 0.5 - Math.random())
 
-// from stackoverflow
+
+// from stackoverflow to reset page 
 function resetBoard(){
    window.location.reload();
 }
@@ -51,14 +53,12 @@ function flip(){
     this.setAttribute('src', cardsArray[card_array_id].img)
     // selected.push(position)
     if(selected.length === 2){
-        console.log('test');
         setTimeout(matched, 500)
     }
 
 }
 
 function matched(){
-    console.log('clicked');
     var cards = document.getElementsByClassName('card')
     var first_id = selected[0]
     var second_id = selected[1]

@@ -20,6 +20,7 @@ var selected = []
 
 cardsArray.sort(() => 0.5 - Math.random())
 
+
 // from stackoverflow to reset page 
 function resetBoard(){
    window.location.reload();
@@ -35,7 +36,7 @@ function createBoard(){
         card.setAttribute('id', i)
         card.setAttribute('src', 'images/questionmark.png')
         card.addEventListener("click", flip);
-        // card.innerHTML = cardsArray[i];
+        card.innerHTML = cardsArray[i];
         parent.appendChild(card)
         board.appendChild(parent)
 
@@ -52,14 +53,12 @@ function flip(){
     this.setAttribute('src', cardsArray[card_array_id].img)
     // selected.push(position)
     if(selected.length === 2){
-        // console.log('test');
         setTimeout(matched, 500)
     }
 
 }
 
 function matched(){
-    // console.log('clicked');
     var cards = document.getElementsByClassName('card')
     var first_id = selected[0]
     var second_id = selected[1]

@@ -48,7 +48,7 @@ body{
 
 .resetBtn{
     margin-right: -55px;
-    position: fixed;
+    /* position: fixed; */
     color: white;
     letter-spacing: 2px;
     font-family: 'Futura', sans-serif;
